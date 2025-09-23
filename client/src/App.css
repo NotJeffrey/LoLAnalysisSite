@@ -1,0 +1,226 @@
+.App {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  color: #333;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px;
+  background-color: #0077be;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d32f2f;
+  background-color: #ffcdd2;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.game-card {
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.game-card.winner {
+  background-color: #e3f2fd;
+  border: 1px solid #90caf9;
+}
+
+.game-card.loser {
+  background-color: #ffebee;
+  border: 1px solid #ef9a9a;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.game-title-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.game-title-container h3 {
+  margin: 0;
+  text-align: left;
+}
+
+.preview-stats {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.champion-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.champion-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+}
+
+.preview-stats .champion-name {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.preview-stats .kda {
+  font-family: bold;
+  font-size: 1.1em;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+}
+
+.dropdown-toggle:hover {
+  background-color: #d0d0d0;
+}
+
+.dropdown-toggle::after {
+  content: '▼';
+  display: inline-block;
+}
+
+.dropdown-toggle.expanded::after {
+  transform: rotate(180deg);
+}
+
+.game-details {
+  display: none;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.game-details.expanded {
+  display: block;
+  opacity: 1;
+  height: auto;
+  overflow: visible;
+}
+
+.team {
+  margin-bottom: 20px;
+}
+
+.player-stats {
+  display: grid;
+  grid-template-columns: auto 1fr 2fr;
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.player-stats .champion-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.player-stats.winner {
+  background-color: rgba(144, 202, 249, 0.2);
+}
+
+.player-stats.loser {
+  background-color: rgba(239, 154, 154, 0.2);
+}
+
+.player-name {
+  font-weight: bold;
+}
+
+.player-stats-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@media (min-width: 600px) {
+  form {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  form > * {
+    flex: 1;
+  }
+
+  form button {
+    flex: 0 0 auto;
+  }
+}
